@@ -711,13 +711,12 @@ bool LIN_Bus::Send(DWORD ID, int nCHN, unsigned char* pData, CString* pSendMsg)
 	LINSlaveMsg[0].PID = ID;
 	LINSlaveMsg[0].CheckType = LIN_EX_CHECK_EXT;
 	LINSlaveMsg[0].DataLen = 8;
+	LINSlaveMsg[0].MsgType = LIN_EX_MSG_TYPE_SW;//从机发送数据模式
 
 	for (int j = 0; j < LINSlaveMsg[0].DataLen; j++) {
 		LINSlaveMsg[0].Data[j] = pData[j];
 	}
-	LINSlaveMsg[0].MsgType = LIN_EX_MSG_TYPE_SW;//从机发送数据模式
 	
-	//szChannelIndex = gLINMasterIndex == 0 ? 0 : 1;
 	ret = LIN_EX_SlaveSetIDMode(gDevHandle[gDevIndex], nCHN, LINSlaveMsg, 5);
 	if (ret != LIN_EX_SUCCESS) {
 		printf("Config LIN ID Mode failed!\n");

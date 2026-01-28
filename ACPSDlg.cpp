@@ -3456,7 +3456,7 @@ bool CACPSDlg::lowPower_CurrentTest()
 	float fCurr_2 = 0.0f;
 
 	Sleep(2000);
-	m_Mediator->lowPower->Get_Dev_Curr(&fCurr_1, &fCurr_2);
+	m_Mediator->lowPower->Get_Dev_Curr(&fCurr_1);
 	if(fCurr_1 < 1)
 		fCurr = fCurr_1 * 1000.0f;
 	

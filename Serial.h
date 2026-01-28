@@ -81,6 +81,8 @@ typedef enum {
 	GET_CURR,	
 	MEAS_VOL,
 	MEAS_CURR,
+	MEAS_VOL_ALL,
+	MEAS_CURR_ALL,
 	SET_CHANNEL,
 	OUTP,
 	REMOTE_ENABLE
@@ -168,7 +170,8 @@ public:
 	bool Get_Dev_Curr(float* current, float* current2);
 	//获取低压电压
 	bool Get_Dev_Vol(float* voltage);
-
+	//获取低压电流
+	bool Get_Dev_Curr(float* current);
 	//扫描枪
 	bool Open_ScannerGun(bool bOpen);
 	bool Get_ScannerGun_Data(CString* pRecvData);

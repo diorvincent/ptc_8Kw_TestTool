@@ -240,14 +240,6 @@ bool LowVolPowerCom::PackCmdWrite(unsigned char* strOutMsg, float value, int* le
 		sprintf(tempstr, "CURR %1.2fA\r\n", value);
 	else if (powerquerytype == SET_CHANNEL)
 		sprintf(tempstr, "INSTrument:NSELect %d\r\n", (int)value);
-	//{	
-	//	if(value == 1)
-	//		strcpy((char*)strOutMsg, "INST FIRST\r\n");
-	//	else if(value == 2)
-	//		strcpy((char*)strOutMsg, "INST SECOND\r\n");
-	//	else if (value == 3)
-	//		strcpy((char*)strOutMsg, "INST THIRD\r\n");
-	//}
 	else if (powerquerytype == OUTP)
 		sprintf(tempstr, "OUTP %d\r\n",  (int)value);
 	else if (powerquerytype == REMOTE_ENABLE)
@@ -274,8 +266,12 @@ bool LowVolPowerCom::PackCmdRead(unsigned char* strOutMsg, int* length, PowerQue
 		sprintf(tempstr, "CURR?\r\n");
 	else if(powerquerytype == MEAS_VOL)
 		sprintf(tempstr, "MEAS:VOLT?\r\n");
-	else if (powerquerytype == MEAS_CURR)
+	else if (powerquerytype == MEAS_CURR)		
 		sprintf(tempstr, "MEAS:CURR?\r\n"); 
+	else if (powerquerytype == MEAS_VOL_ALL)
+		sprintf(tempstr, "MEASure:VOLTage:ALL?\r\n");
+	else if (powerquerytype == MEAS_CURR_ALL)
+		sprintf(tempstr, "MEASure:CURRent:ALL?\r\n");
 	strcpy((char*)strOutMsg, tempstr);
 	*length = strlen(tempstr);
 	return true;
@@ -642,6 +638,7 @@ bool LowVolPowerCom::Get_Dev_Vol_Curr(float* voltage, float* current)
 	return HaveError;
 }
 
+//获取低压电压
 bool LowVolPowerCom::Get_Dev_Vol(float* voltage)
 {
 	BOOL HaveError;
@@ -696,6 +693,61 @@ bool LowVolPowerCom::Get_Dev_Vol(float* voltage)
 	return HaveError;
 }
 
+//获取低压电流
+bool LowVolPowerCom::Get_Dev_Curr(float* current)
+{
+	BOOL HaveError;
+	unsigned char PackageOut[PACKAGELENGTH];
+	unsigned char strRecvData[PACKAGELENGTH];
+	int NumberInTheBuffer = 8;
+	int num;
+	int lengthtemp;
+	int CycNumber;
+	CString valuestr;
+
+	PurgeComm(this->m_hIDComDev, PURGE_RXCLEAR);
+	PurgeComm(this->m_hIDComDev, PURGE_TXCLEAR);
+
+	//measure current on low power 
+	HaveError = FALSE;
+	CycNumber = 0;
+
+	do
+	{
+		CycNumber++;
+		memset(PackageOut, 0, PACKAGELENGTH);
+		memset(strRecvData, 0, PACKAGELENGTH);
+
+		PackCmdRead(PackageOut, &lengthtemp, MEAS_CURR);
+		this->SendData(PackageOut, lengthtemp);
+
+		NumberInTheBuffer = WaitAllDataArrial(this, 50);
+		if (NumberInTheBuffer > 20 || NumberInTheBuffer == 0)
+		{
+			continue;
+		}
+		else
+		{
+			this->ReadData(strRecvData, NumberInTheBuffer);
+			valuestr = strRecvData;
+			*current = atof(valuestr);
+
+			break;
+		}
+
+	} while (CycNumber < 3);
+
+	if (CycNumber == 3)
+	{
+		HaveError = TRUE;
+	}
+
+	PurgeComm(this->m_hIDComDev, PURGE_RXCLEAR);
+	PurgeComm(this->m_hIDComDev, PURGE_TXCLEAR);
+
+	return HaveError;
+}
+
 //获取两个通道的电压
 bool LowVolPowerCom::Get_Dev_Vol(float* voltage, float* voltage2)
 {
@@ -721,7 +773,7 @@ bool LowVolPowerCom::Get_Dev_Vol(float* voltage, float* voltage2)
 		memset(PackageOut, 0, PACKAGELENGTH);
 		memset(strRecvData, 0, PACKAGELENGTH);
 
-		PackCmdRead(PackageOut, &lengthtemp, MEAS_VOL);
+		PackCmdRead(PackageOut, &lengthtemp, MEAS_VOL_ALL);
 		this->SendData(PackageOut, lengthtemp);
 
 		NumberInTheBuffer = WaitAllDataArrial(this, 100);
@@ -732,11 +784,9 @@ bool LowVolPowerCom::Get_Dev_Vol(float* voltage, float* voltage2)
 		else
 		{
 			this->ReadData(strRecvData, NumberInTheBuffer);
-			valuestr = strRecvData;
-			*voltage = atof(valuestr);
-			// 
-			//*voltage = ((strRecvData[0] - '0') * 10 + (strRecvData[1] - '0') + (strRecvData[3] - '0') / 10.0f + (strRecvData[4] - '0') / 100.0f + (strRecvData[5] - '0') / 1000.0f);
-			//*voltage2 = ((strRecvData[7] - '0') * 10 + (strRecvData[8] - '0') + (strRecvData[10] - '0') / 10.0f + (strRecvData[11] - '0') / 100.0f + (strRecvData[12] - '0') / 1000.0f);
+
+			*voltage = ((strRecvData[0] - '0') * 10 + (strRecvData[1] - '0') + (strRecvData[3] - '0') / 10.0f + (strRecvData[4] - '0') / 100.0f + (strRecvData[5] - '0') / 1000.0f);
+			*voltage2 = ((strRecvData[7] - '0') * 10 + (strRecvData[8] - '0') + (strRecvData[10] - '0') / 10.0f + (strRecvData[11] - '0') / 100.0f + (strRecvData[12] - '0') / 1000.0f);
 			break;
 		}
 
@@ -778,7 +828,7 @@ bool LowVolPowerCom::Get_Dev_Curr(float* current, float* current2)
 		memset(PackageOut, 0, PACKAGELENGTH);
 		memset(strRecvData, 0, PACKAGELENGTH);
 
-		PackCmdRead(PackageOut, &lengthtemp, MEAS_CURR);
+		PackCmdRead(PackageOut, &lengthtemp, MEAS_CURR_ALL);
 		this->SendData(PackageOut, lengthtemp);
 
 		NumberInTheBuffer = WaitAllDataArrial(this, 50);
@@ -789,11 +839,9 @@ bool LowVolPowerCom::Get_Dev_Curr(float* current, float* current2)
 		else
 		{
 			this->ReadData(strRecvData, NumberInTheBuffer);
-			valuestr = strRecvData;
-			*current = atof(valuestr);
 
-			//*current = ((strRecvData[0] - '0') + (strRecvData[2] - '0') / 10.0f + (strRecvData[3] - '0') / 100.0f + (strRecvData[4] - '0') / 1000.0f);
-			//*current2 = ((strRecvData[6] - '0') + (strRecvData[8] - '0') / 10.0f + (strRecvData[9] - '0') / 100.0f + (strRecvData[10] - '0') / 1000.0f);
+			*current = ((strRecvData[0] - '0') + (strRecvData[2] - '0') / 10.0f + (strRecvData[3] - '0') / 100.0f + (strRecvData[4] - '0') / 1000.0f);
+			*current2 = ((strRecvData[6] - '0') + (strRecvData[8] - '0') / 10.0f + (strRecvData[9] - '0') / 100.0f + (strRecvData[10] - '0') / 1000.0f);
 			break;
 		}
 
