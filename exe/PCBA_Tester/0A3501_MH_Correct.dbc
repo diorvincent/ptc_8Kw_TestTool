@@ -1,0 +1,228 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: PTC AC ECON
+VAL_TABLE_ FMI 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "与AC通信故障" 10 "过流故障" 9 "IGBT短路故障" 8 "IGBT温度过温功能" 7 "PTC温度过温功能" 6 "IGBT温度传感器故障" 5 "PTC温度传感器故障" 4 "温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "无故障" ;
+VAL_TABLE_ IGBTerr 3 "无效" 2 "IGBT开路" 1 "IGBT短路" 0 "无故障" ;
+VAL_TABLE_ PTCRunStatus 3 "无效" 2 "故障" 1 "运行" 0 "停机" ;
+VAL_TABLE_ led 3 "无效" 2 "错误" 1 "激活" 0 "未激活" ;
+VAL_TABLE_ PTC_ON_OFF 3 "无效" 2 "运行" 1 "停机" 0 "预留" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ ACReq : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EVAPETXV_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECC_COMP_ReqStatus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECC_Work_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECC_Power_Undervoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECC_Power_Overvoltage : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECC_AC_speed : 0|16@1+ (1,0) [0|65535] "RPM" Vector__XXX
+ SG_ ECC_AC_ON : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ACCM_OvrVolFlt : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCM_OvrTmpFey : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCM_TmpFlt : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCM_UndrVFlt : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACCM_CmpsrOpCrnt : 0|8@1+ (0.1,0) [0|0] "A" Vector__XXX
+
+BO_ 2565668733 Multi_DM0_PTC: 8 PTC
+ SG_ Multi_DataLength : 8|8@1+ (1,0) [0|255] ""  AC
+
+BO_ 2565603197 Multi_DM1_PTC: 8 PTC
+ SG_ SPN_Num_2_L m1 : 56|8@1+ (1,0) [0|255] ""  AC
+ SG_ SPN_Num_4 m3 : 8|16@1+ (1,0) [0|65535] ""  AC
+ SG_ SPN_Num_3 m2 : 32|16@1+ (1,0) [0|65535] ""  AC
+ SG_ SPN_Num_2_H m2 : 8|8@1+ (1,0) [0|255] ""  AC
+ SG_ SPN_Num_1 m1 : 24|16@1+ (1,0) [0|65535] ""  AC
+ SG_ SPN_HighBit_4 m3 : 29|3@1+ (1,0) [0|7] ""  AC
+ SG_ SPN_HighBit_3 m2 : 53|3@1+ (1,0) [0|7] ""  AC
+ SG_ SPN_HighBit_2 m2 : 21|3@1+ (1,0) [0|7] ""  AC
+ SG_ SPN_HighBit_1 m1 : 45|3@1+ (1,0) [0|7] ""  AC
+ SG_ OccuranceCount_4 m3 : 32|7@1+ (1,0) [0|126] ""  AC
+ SG_ OccuranceCount_3 m2 : 56|7@1+ (1,0) [0|126] ""  AC
+ SG_ OccuranceCount_2 m2 : 24|7@1+ (1,0) [0|126] ""  AC
+ SG_ OccuranceCount_1 m1 : 48|7@1+ (1,0) [0|126] ""  AC
+ SG_ FMI_4 m3 : 24|5@1+ (1,0) [0|31] ""  AC
+ SG_ FMI_3 m2 : 48|5@1+ (1,0) [0|31] ""  AC
+ SG_ FMI_2 m2 : 16|5@1+ (1,0) [0|31] ""  AC
+ SG_ FMI_1 m1 : 40|5@1+ (1,0) [0|31] ""  AC
+ SG_ MultiSignal M : 0|8@1- (1,0) [0|0] ""  AC
+
+BO_ 2566878233 ACCtrl: 3 AC
+ SG_ PTC_Power_Limit : 16|8@1+ (0.1,0) [0|20] "KW"  PTC
+ SG_ PTC_Power_Ratio_Set : 8|8@1+ (1,0) [0|100] "%"  PTC
+ SG_ PTC_ON_OFF : 0|2@1+ (1,0) [0|3] ""  PTC
+
+BO_ 2566834813 DM1_PTC: 8 PTC
+ SG_ SPN_Mode : 47|1@1+ (1,0) [0|1] ""  AC
+ SG_ OccuranceCount : 40|7@1+ (1,0) [0|126] ""  AC
+ SG_ SPN_HighBit : 37|3@1+ (1,0) [0|7] ""  AC
+ SG_ FMI : 32|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ SPN_Num : 16|16@1+ (1,0) [0|65535] ""  AC
+ SG_ MalfunctionIndicatorLamp : 6|2@1+ (1,0) [0|3] ""  AC
+ SG_ RedStopLamp : 4|2@1+ (1,0) [0|3] ""  AC
+ SG_ WarnLamp : 2|2@1+ (1,0) [0|3] ""  AC
+ SG_ ProtectLamp : 0|2@1+ (1,0) [0|3] ""  AC
+
+BO_ 2566878845 PTC1: 8 PTC
+ SG_ IGBTERR : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PTC_Temperature : 48|8@1+ (1,-40) [-40|210] "℃"  AC
+ SG_ Power_Run : 40|8@1+ (0.1,0) [0|20] "kw"  AC
+ SG_ Power_Ratio_Run : 32|8@1+ (1,0) [0|100] "%"  AC
+ SG_ HV_Voltage : 16|16@1+ (0.1,0) [0|1000] "V"  AC
+ SG_ PTC_running_current : 8|8@1+ (1,0) [0|250] "A"  AC
+ SG_ PTCRunStatus : 0|2@1+ (1,0) [0|3] ""  AC
+
+
+
+CM_ BU_ PTC "PTC
+";
+CM_ BU_ AC "控制黑盒";
+CM_ BU_ ECON "压缩机";
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 ACReq "压缩机吸合请求";
+CM_ SG_ 3221225472 EVAPETXV_Status "蒸电磁阀状态";
+CM_ SG_ 3221225472 ECC_COMP_ReqStatus "制冷请求";
+CM_ SG_ 3221225472 ECC_Work_Status "ECC工作状态";
+CM_ SG_ 3221225472 ECC_Power_Undervoltage "ECC电源欠压";
+CM_ SG_ 3221225472 ECC_Power_Overvoltage "ECC电源过压";
+CM_ SG_ 3221225472 ECC_AC_ON "ECC上报压缩机运行状态";
+CM_ SG_ 3221225472 ACCM_OvrVolFlt "压缩机过压故障";
+CM_ SG_ 3221225472 ACCM_OvrTmpFey "过温降频";
+CM_ SG_ 3221225472 ACCM_TmpFlt "压缩机过温故障";
+CM_ SG_ 3221225472 ACCM_UndrVFlt "压缩机欠压故障";
+CM_ SG_ 3221225472 ACCM_CmpsrOpCrnt "空调压缩机工作电流";
+CM_ SG_ 2565668733 Multi_DataLength "SPN值";
+CM_ BO_ 2565603197 "DM1_PTC
+";
+CM_ SG_ 2565603197 SPN_Num_2_L "SPN值";
+CM_ SG_ 2565603197 SPN_Num_4 "SPN值";
+CM_ SG_ 2565603197 SPN_Num_3 "SPN值";
+CM_ SG_ 2565603197 SPN_Num_2_H "SPN值";
+CM_ SG_ 2565603197 SPN_Num_1 "SPN值";
+CM_ SG_ 2565603197 SPN_HighBit_4 "SPN高三位";
+CM_ SG_ 2565603197 SPN_HighBit_3 "SPN高三位";
+CM_ SG_ 2565603197 SPN_HighBit_2 "SPN高三位";
+CM_ SG_ 2565603197 SPN_HighBit_1 "SPN高三位";
+CM_ SG_ 2565603197 OccuranceCount_4 "发生次数";
+CM_ SG_ 2565603197 OccuranceCount_3 "发生次数";
+CM_ SG_ 2565603197 OccuranceCount_2 "发生次数";
+CM_ SG_ 2565603197 OccuranceCount_1 "发生次数";
+CM_ SG_ 2565603197 FMI_4 "故障模式";
+CM_ SG_ 2565603197 FMI_3 "故障模式";
+CM_ SG_ 2565603197 FMI_2 "故障模式";
+CM_ SG_ 2565603197 FMI_1 "故障模式";
+CM_ BO_ 2566878233 "控制器";
+CM_ SG_ 2566878233 PTC_Power_Limit "PTC限制功率";
+CM_ SG_ 2566878233 PTC_Power_Ratio_Set "PTC设定功率百分比";
+CM_ SG_ 2566878233 PTC_ON_OFF "PTC 启停信号";
+CM_ BO_ 2566834813 "DM1_PTC
+";
+CM_ SG_ 2566834813 SPN_Mode "SPN转换方式";
+CM_ SG_ 2566834813 OccuranceCount "发生次数";
+CM_ SG_ 2566834813 SPN_HighBit "SPN高三位";
+CM_ SG_ 2566834813 FMI "故障模式";
+CM_ SG_ 2566834813 SPN_Num "SPN值";
+CM_ SG_ 2566834813 MalfunctionIndicatorLamp "故障指示灯状态";
+CM_ SG_ 2566834813 RedStopLamp "红色停止灯状态";
+CM_ SG_ 2566834813 WarnLamp "琥珀色警告灯状态";
+CM_ SG_ 2566834813 ProtectLamp "保护灯状态 ";
+CM_ BO_ 2566878845 "PTC
+";
+CM_ SG_ 2566878845 IGBTERR "IGBT故障";
+CM_ SG_ 2566878845 PTC_Temperature "PTC温度";
+CM_ SG_ 2566878845 Power_Run "PTC实际消耗功率";
+CM_ SG_ 2566878845 Power_Ratio_Run "PTC运行功率百分比";
+CM_ SG_ 2566878845 HV_Voltage "PTC工作电压";
+CM_ SG_ 2566878845 PTC_running_current "PTC工作电流";
+CM_ SG_ 2566878845 PTCRunStatus "PTC运行状态";
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ SG_  "NWM-WakeupAllowed" ENUM  "No","Yes";
+BA_DEF_ BO_  "NmMessage" ENUM  "no","yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmStationAddress" INT 0 63;
+BA_DEF_  "NmBaseAddress" HEX 1024 1087;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 50000;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 999999;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed","vector_leerstring";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed";
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 100000000000;
+BA_DEF_DEF_  "NodeLayerModules" "CANoeILNLVector.dll";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NWM-WakeupAllowed" "";
+BA_DEF_DEF_  "NmMessage" "no";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "NmNode" "no";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "NmBaseAddress" 1024;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_ "BusType" "CAN";
+BA_ "NmStationAddress" BU_ PTC 2;
+BA_ "NmNode" BU_ AC 1;
+BA_ "NmStationAddress" BU_ AC 1;
+BA_ "NmNode" BU_ ECON 1;
+BA_ "GenMsgCycleTime" BO_ 2565668733 1000;
+BA_ "GenMsgCycleTime" BO_ 2565603197 1000;
+BA_ "GenMsgCycleTime" BO_ 2566878233 100;
+BA_ "GenMsgCycleTime" BO_ 2566834813 1000;
+BA_ "GenMsgCycleTime" BO_ 2566878845 1000;
+BA_ "GenSigStartValue" SG_ 2566878845 PTC_Temperature 295;
+BA_ "GenSigStartValue" SG_ 2566878845 Power_Run 255;
+VAL_ 2565603197 FMI_4 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "Description for the value '0xB'" 10 "过流故障" 9 "IGBT开路故障" 8 "IGBT短路故障" 7 "IGBT温度过温功能" 6 "PTC温度过温功能" 5 "IGBT温度传感器故障" 4 "PTC温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "低压过压故障/与AC通信故障" ;
+VAL_ 2565603197 FMI_3 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "Description for the value '0xB'" 10 "过流故障" 9 "IGBT开路故障" 8 "IGBT短路故障" 7 "IGBT温度过温功能" 6 "PTC温度过温功能" 5 "IGBT温度传感器故障" 4 "PTC温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "低压过压故障/与AC通信故障" ;
+VAL_ 2565603197 FMI_2 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "Description for the value '0xB'" 10 "过流故障" 9 "IGBT开路故障" 8 "IGBT短路故障" 7 "IGBT温度过温功能" 6 "PTC温度过温功能" 5 "IGBT温度传感器故障" 4 "PTC温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "低压过压故障/与AC通信故障" ;
+VAL_ 2565603197 FMI_1 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "Description for the value '0xB'" 10 "过流故障" 9 "IGBT开路故障" 8 "IGBT短路故障" 7 "IGBT温度过温功能" 6 "PTC温度过温功能" 5 "IGBT温度传感器故障" 4 "PTC温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "低压过压故障/与AC通信故障" ;
+VAL_ 2566878233 PTC_ON_OFF 3 "无效" 2 "运行" 1 "停机" 0 "预留" ;
+VAL_ 2566834813 FMI 13 "Description for the value '0xD'" 12 "Description for the value '0xC'" 11 "Description for the value '0xB'" 10 "过流故障" 9 "IGBT开路故障" 8 "IGBT短路故障" 7 "IGBT温度过温功能" 6 "PTC温度过温功能" 5 "IGBT温度传感器故障" 4 "PTC温度传感器故障" 3 "高压欠压故障" 2 "高压过压故障" 1 "低压欠压故障" 0 "低压过压故障/与AC通信故障" ;
+VAL_ 2566834813 MalfunctionIndicatorLamp 3 "无效" 2 "错误" 1 "激活" 0 "未激活" ;
+VAL_ 2566834813 RedStopLamp 3 "无效" 2 "错误" 1 "激活" 0 "未激活" ;
+VAL_ 2566834813 WarnLamp 3 "无效" 2 "错误" 1 "激活" 0 "未激活" ;
+VAL_ 2566834813 ProtectLamp 3 "无效" 2 "错误" 1 "激活" 0 "未激活" ;
+VAL_ 2566878845 IGBTERR 3 "无效" 2 "IGBT开路" 1 "IGBT短路" 0 "无故障" ;
+VAL_ 2566878845 PTCRunStatus 3 "无效" 2 "故障" 1 "运行" 0 "停机" ;
+

@@ -1,0 +1,14 @@
+SYSTem:REMote
+
+SYSTem:LOCal
+
+
+VOLTage 5V
+
+
+CURR 30mA
+
+
+MEAS:VOLT?
+
+MEAS:CURR?

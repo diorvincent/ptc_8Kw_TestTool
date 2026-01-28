@@ -1,0 +1,348 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ACPS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ISObj_WI.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 8Kw auto test tool"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "自动测试程序 1.1 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2026",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_ACPS_DIALOG DIALOGEX 0, 0, 488, 338
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_WINDOWEDGE | WS_EX_APPWINDOW
+CAPTION "控制板检测程序(单PTC V1.1 )"
+FONT 12, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "List5",IDC_LIST5,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,7,81,473,111
+    PUSHBUTTON      "test8710",IDC_REPORT_EXPORT,303,59,60,19,NOT WS_VISIBLE
+    CTEXT           "8Kw PTC控制板检测",IDC_STATIC_TITLE,161,9,160,21
+    PUSHBUTTON      "测试参数配置",IDC_TEST_PARAMS,243,37,61,20
+    PUSHBUTTON      "暂停测试",IDC_BTNSTOP,66,37,61,20
+    PUSHBUTTON      "启动测试",IDC_BTNSTART,7,37,61,20,NOT WS_TABSTOP
+    PUSHBUTTON      "退出",IDCANCEL,303,37,60,20
+    EDITTEXT        IDC_OVEREDIT,41,61,100,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "通信参数配置",IDC_COMMSETTING,184,37,61,20
+    LTEXT           "测试状态",IDC_STATICSTATE,185,63,39,10,SS_CENTERIMAGE | NOT WS_GROUP
+    LTEXT           "控制板板状态",IDC_STATICPCBA,231,62,63,11,SS_CENTERIMAGE
+    PUSHBUTTON      "解除报警",IDC_OFFMSG,125,37,61,20
+    LTEXT           "序列号A",IDC_STATICID,8,63,31,8
+    LISTBOX         IDC_LIST1,250,214,233,112,LBS_NOINTEGRALHEIGHT | LBS_WANTKEYBOARDINPUT | WS_VSCROLL | WS_TABSTOP,WS_EX_STATICEDGE
+    LISTBOX         IDC_LIST3,7,214,231,112,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "总线报文",IDC_STATICMSG,7,200,33,8
+    LTEXT           "运行状态",IDC_STATICLISTINFO,245,200,33,8
+    CONTROL         IDB_BITMAP1,IDC_LOGO,"Static",SS_BITMAP | SS_REALSIZEIMAGE,376,3,90,31
+    EDITTEXT        IDC_OVEREDIT2,40,19,100,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "序列号B",IDC_STATICID2,7,21,30,8,NOT WS_VISIBLE
+END
+
+IDD_CONFIG_DIALOG DIALOGEX 0, 0, 216, 244
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数设置"
+FONT 12, "宋体", 0, 0, 0x0
+BEGIN
+    LTEXT           "端口号",IDC_STATIC,15,18,37,15
+    LTEXT           "波特率",IDC_STATIC,15,36,30,15
+    LTEXT           "数据位",IDC_STATIC,15,55,30,15
+    LTEXT           "停止位",IDC_STATIC,15,75,29,15
+    LTEXT           "校验位",IDC_STATIC,15,96,29,15
+    COMBOBOX        IDC_COMBO1,44,17,54,49,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,44,35,54,39,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,44,54,54,40,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,44,74,54,46,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO5,44,95,54,41,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "端口号",IDC_STATIC,117,18,37,11
+    LTEXT           "波特率",IDC_STATIC,117,36,30,15
+    LTEXT           "数据位",IDC_STATIC,117,55,30,15
+    LTEXT           "停止位",IDC_STATIC,117,75,29,15
+    LTEXT           "校验位",IDC_STATIC,117,96,29,15
+    COMBOBOX        IDC_COMBO6,147,17,50,44,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO7,147,35,50,46,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO8,147,54,50,51,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO9,147,74,50,51,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO10,147,95,50,37,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "保存配置",IDC_BUTTON1,128,197,70,19
+    GROUPBOX        "RS485总线",IDC_STATIC,9,7,97,105
+    GROUPBOX        "低压电源设备",IDC_STATIC,109,7,96,105
+    PUSHBUTTON      "返回",IDCANCEL,128,218,70,19
+    GROUPBOX        "CAN总线参数",IDC_STATIC,7,112,99,88
+    LTEXT           "Frame",IDC_STATIC,12,125,37,15
+    LTEXT           "Type",IDC_STATIC,12,138,22,12
+    LTEXT           "CANdex",IDC_STATIC,12,151,27,15
+    COMBOBOX        IDC_COMBO16,43,124,50,43,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO17,43,137,50,46,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO18,43,151,50,40,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO20,43,164,50,44,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DevType",IDC_STATIC,12,166,29,15
+    GROUPBOX        "LIN总线参数",IDC_STATIC,109,114,96,47
+    LTEXT           "DevNum",IDC_STATIC,117,125,24,11
+    COMBOBOX        IDC_COMBOLINDEVNUM,147,124,50,43,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "CHN",IDC_STATIC,117,141,24,11
+    COMBOBOX        IDC_COMBOLINCHANNEL,147,141,50,43,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "软件版本",IDC_SOFTWAREVERSION,109,165,97,29
+    COMBOBOX        IDC_CB_SOFTWARE_V1,112,180,19,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CB_SOFTWARE_V2,134,180,19,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CB_SOFTWARE_V3,156,180,19,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CB_SOFTWARE_V4,177,180,19,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "总线类型",IDC_BUS_ADAPTER,9,204,96,30
+    COMBOBOX        IDC_CB_BUSADAPTER,12,216,85,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "CAN FD",IDC_CK_CANFD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,184,37,10
+    CONTROL         "BRS",IDC_CK_BRS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,65,184,25,10
+END
+
+IDD_RANGE_DIALOG DIALOGEX 0, 0, 244, 242
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数配置"
+FONT 12, "宋体", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "保存设置",IDC_BUTTON1,52,220,60,15
+    PUSHBUTTON      "返回",IDCANCEL,125,220,60,15
+    CONTROL         "",IDC_LISTCFG,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,230,209
+    EDITTEXT        IDC_NUMEDIT,197,221,40,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "Xi'An ManHui Info Technolegy Co.Ltd"
+            VALUE "FileDescription", "华族8Kw测试程序(ProductLine 8Kw PTC auto test application)"
+            VALUE "FileVersion", "1.1.0.1"
+            VALUE "InternalName", "_8KwPTC_Testtool(1to2)"
+            VALUE "LegalCopyright", "2026 Xi'An ManHui Info Technolegy Co.Ltd"
+            VALUE "OriginalFilename", "_8KwPTC_Testtool.EXE"
+            VALUE "ProductName", "_8KwPTCMODULE test tool for HUAZU"
+            VALUE "ProductVersion", "1.1.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ACPS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 483
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 331
+        HORZGUIDE, 166
+    END
+
+    IDD_CONFIG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 132
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_RANGE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ACPS_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_RANGE_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_CONFIG_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "resource\\ManHui.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONFIG_DIALOG DLGINIT
+BEGIN
+    IDC_CB_BUSADAPTER, 0x403, 8, 0
+0x4143, 0x204e, 0x7562, 0x0073, 
+    IDC_CB_BUSADAPTER, 0x403, 8, 0
+0x494c, 0x204e, 0x7562, 0x0073, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于 8Kw AutoTesttool(&C)..."
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ACPS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ACPSDlg.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBus.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSnapWnd.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpreadSheet.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="CXPButton.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="excel.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListCtrlP.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="methord.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberEdit.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Range.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Serial.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ACPS.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ACPS.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ACPSDlg.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="CBus.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ControlCAN.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSnapWnd.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="CXPButton.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="excel.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListCtrlP.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="methord.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberEdit.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="numtype.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Range.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Serial.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\usb_device.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\usb2lin_ex.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PCAN-ISO-TP_2004.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ACPS.ico">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="res\ISObj_WI.ico">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="resource\ManHui.bmp">
+      <Filter>Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{1495d3d2-3324-4cab-8929-e770152a76a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{dfd39423-b2c6-4102-bb15-b185161222c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{428a842a-33d0-495b-af4e-556d066562c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ACPS.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\ACPS.rc2">
+      <Filter>Resource</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

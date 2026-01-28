@@ -1,0 +1,42 @@
+pcba.eep_mark_byte1 = false;	//标志位
+pcba.eep_mark_byte2 = false;
+pcba.lowpwr_curr1 = false;	//低压电流
+pcba.lowpwr_curr2 = false;
+pcba.cycle_time1 = false;		//报文周期
+pcba.cycle_time2 = false;
+pcba.project_info1 = false;		//项目信息
+pcba.project_info2 = false;		
+pcba.software_ver1 = false;	//软件版本
+pcba.software_ver2 = false;
+pcba.ov1 = false;			//低压过压
+pcba.ov2 = false;
+pcba.uv1 = false;			//低压欠压
+pcba.uv2 = false;
+pcba.igbt_temp1 = false;		//igbt温度传感器
+pcba.igbt_temp2 = false;
+pcba.ptc_temp1 = false;		//ptc传感器
+pcba.ptc_temp2 = false;
+pcba.ptc_env_temp1 = false;	//pcb温度传感器
+pcba.ptc_env_temp2 = false;	
+pcba.PowerMode_power = 0.0f;	  	//4Kw功率值	ptc0
+pcba.PowerMode_power_1 = 0.0f;	//4Kw功率值	ptc1
+pcba.PowerError_1 = 0.0f;		  	//4Kw功率误差	ptc0
+pcba.PowerError_2 = 0.0f;			//4Kw功率误差	ptc1
+pcba.PowerMode_power_2 = 0.0f;	/8Kw功率值	ptc0
+pcba.PowerMode_power_3 =  0.0f;	//8Kw功率值	ptc1
+pcba.PowerError_3 = 0.0f;			//8Kw功率误差	ptc0
+pcba.PowerError_4 = f 0.0f;		//8Kw功率误差	ptc1
+pcba.highvol_overvol1 = false;		
+pcba.highvol_overvol2 = false;		//高压过压
+pcba.highvol_undervol1 = false;		//高压欠压
+pcba.highvol_undervol2 = false;
+pcba.fCalied_Power1 =0.0f;		//ptc0 校准后功率
+pcba.fCalied_Power2 = 0.0f;		//ptc1 校准后功率
+pcba.fCalied_50Slope1 = 0.0f;		//ptc0 50%占空比斜率
+pcba.fCalied_50Slope2 = 0.0f;		//ptc1 50%占空比斜率
+pcba.fCalied_100Slope1 = 0.0f;		//ptc0 100%占空比斜率
+pcba.fCalied_100Slope2 = 0.0f;		//ptc1 100%占空比斜率
+
+
+
+

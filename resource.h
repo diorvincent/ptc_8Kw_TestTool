@@ -1,0 +1,119 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ 生成的包含文件。
+// 供 ACPS.rc 使用
+//
+#define IDC_BOXCFG                      3
+#define IDM_ABOUTBOX                    0x0010
+#define IDD_ABOUTBOX                    100
+#define IDS_ABOUTBOX                    101
+#define IDD_ACPS_DIALOG                 102
+#define IDR_MAINFRAME                   128
+#define IDD_CONFIG_DIALOG               129
+#define IDD_RANGE_DIALOG                131
+#define IDD_MANUAL_DIALOG               136
+#define IDD_NYZFIT_DIALOG               137
+#define IDB_BITMAP1                     142
+#define IDC_BUTTON1                     1000
+#define IDC_BUTTON14                    1001
+#define IDC_BUTTON15                    1002
+#define IDC_BUTTON3                     1003
+#define IDC_COMMSETTING                 1004
+#define IDC_BUTTON4                     1005
+#define IDC_BUTTON7                     1006
+#define IDC_TEST_PARAMS                 1007
+#define IDC_LIST5                       1008
+#define IDC_COMBO1                      1009
+#define IDC_SCANGUN                     1009
+#define IDC_OFFMSG                      1010
+#define IDC_BUTTON5                     1011
+#define IDC_COMBO2                      1012
+#define IDC_REPORT_EXPORT               1013
+#define IDC_BUTTON6                     1014
+#define IDC_COMBO3                      1015
+#define IDC_BTNTEST                     1016
+#define IDC_COMBO4                      1017
+#define IDC_STATIC_TITLE                1018
+#define IDC_COMBO5                      1019
+#define IDC_BUTTON8                     1020
+#define IDC_MODEBTNTEST                 1022
+#define IDC_COMBO6                      1023
+#define IDC_COMBO7                      1025
+#define IDC_EDIT3                       1026
+#define IDC_BUTTON9                     1027
+#define IDC_BTNSTART                    1028
+#define IDC_COMBO8                      1029
+#define IDC_EDIT4                       1030
+#define IDC_LIST1                       1031
+#define IDC_COMBO9                      1032
+#define IDC_EDIT5                       1033
+#define IDC_BUTTON2                     1034
+#define IDC_BUTTON10                    1035
+#define IDC_COMBO10                     1036
+#define IDC_EDIT6                       1037
+#define IDC_STATIC_TYPE                 1039
+#define IDC_STATIC3                     1040
+#define IDC_COMBO11                     1043
+#define IDC_COMBO12                     1044
+#define IDC_COMBO13                     1045
+#define IDC_COMBO14                     1046
+#define IDC_RADIO_TEMP                  1047
+#define IDC_COMBO15                     1048
+#define IDC_COMBO16                     1049
+#define IDC_COMBO17                     1050
+#define IDC_COMBO18                     1051
+#define IDC_COMBO19                     1052
+#define IDC_COMBO20                     1053
+#define IDC_COMBOLINDEVNUM              1058
+#define IDC_COMBOLINCHANNEL             1059
+#define IDC_LISTCFG                     1062
+#define IDC_NUMEDIT                     1063
+#define IDC_OVEREDIT                    1064
+#define IDC_STATICSTATE                 1065
+#define IDC_STATICPCBA                  1066
+#define IDC_OVEREDIT2                   1067
+#define IDC_FRAME                       1068
+#define IDC_TYPE                        1069
+#define IDC_CANINDEX                    1070
+#define IDC_DEVTYPE                     1071
+#define IDC_CK_CANFD                    1071
+#define IDC_COMBOCFG                    1072
+#define IDC_CK_BRS                      1072
+#define IDC_STATICID                    1073
+#define IDC_STATICID2                   1074
+#define IDC_COMBOLINMODE                1079
+#define IDC_LOGO                        1080
+#define IDC_STATICENVTEMP               1081
+#define IDC_LIST3                       1082
+#define IDC_RADIO_POWER                 1083
+#define IDC_RADIO_GEAR                  1084
+#define IDC_EDIT_MODE                   1085
+#define IDC_EDIT_WAITTIME               1086
+#define IDC_STATICDATE                  1087
+#define IDC_STATIC_DEVNAME              1088
+#define IDC_STATIC_HVSETVALUE           1089
+#define IDC_STATIC_WAITTIME             1090
+#define IDC_STATIC_CTRLMODE             1091
+#define IDC_STATICMSG                   1092
+#define IDC_STATICLISTINFO              1093
+#define IDC_STATIC_CTRLMODE2            1094
+#define IDC_STATIC_POWERCTRL            1095
+#define IDC_SOFTWAREVERSION             1096
+#define IDC_SOFTWAREVERSION2            1097
+#define IDC_BUS_ADAPTER                 1098
+#define IDC_CB_SOFTWARE_V1              1100
+#define IDC_CB_SOFTWARE_V2              1101
+#define IDC_CB_SOFTWARE_V3              1102
+#define IDC_CB_SOFTWARE_V4              1103
+#define IDC_CB_BUSADAPTER               1104
+#define IDC_BTNSTOP                     2004
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        144
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1073
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
